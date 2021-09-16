@@ -14,6 +14,6 @@ object DataProvider {
         ToDo(title = "zxc", description = "Milk, bananas, coffee, apples, cereals"),
         ToDo(title = "cxzczxczx", description = ""),
         ToDo(title = "ffffffffff", description = ""),
-        ToDo(title = "xdddddddddddddddd", description = "Milk, bananas, coffee, apples, cereals"),
+        ToDo(title = "xdddddddddddddddd", description = "Milk, bananas, coffee, apples, cerealsMilk, bananas, coffee, apples, cerealsMilk, bananas, coffee, apples, cerealsMilk, bananas, coffee, apples, cerealsMilk, bananas, coffee, apples, cerealsMilk, bananas, coffee, apples, cerealsMilk, bananas, coffee, apples, cereals"),
     )
 }
