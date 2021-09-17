@@ -13,12 +13,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.todolistapp.models.ToDo
+import com.example.todolistapp.models.Todo
 import com.example.todolistapp.ui.theme.OwnPurple
 
 @ExperimentalMaterialApi
 @Composable
-fun CreateToDoListItem(todo: ToDo) {
+fun CreateToDoListItem(todo: Todo) {
     Card(
         modifier = Modifier
             .padding(horizontal = 30.dp, vertical = 0.dp)

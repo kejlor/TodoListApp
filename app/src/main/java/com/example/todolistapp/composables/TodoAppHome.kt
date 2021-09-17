@@ -11,15 +11,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.todolistapp.data.DataProvider
-import com.example.todolistapp.models.ToDo
+import com.example.todolistapp.models.Todo
 import com.example.todolistapp.ui.theme.DarkerPurple
 import com.example.todolistapp.ui.theme.LightGray
+import com.example.todolistapp.viewmodels.TodoViewModel
 
 @ExperimentalMaterialApi
 @Composable
-fun TodoAppContent() {
-    val todos = remember { (DataProvider.listOfToDoEntries.toMutableStateList()) }
+fun TodoAppContent(todos: List<Todo>, mTodoViewModel: TodoViewModel) {
     val showDialog = remember { mutableStateOf(false) }
     var titleText by remember { mutableStateOf("") }
     var descriptionText by remember { mutableStateOf("") }
@@ -36,7 +35,7 @@ fun TodoAppContent() {
             items(items = todos, itemContent = {
                 CreateToDoListItem(todo = it)
                 OutlinedButton(
-                    onClick = { todos.remove(it) },
+                    onClick = { mTodoViewModel.deleteTodo(it) },
                     modifier = Modifier
                         .size(40.dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = LightGray),
@@ -102,7 +101,7 @@ fun TodoAppContent() {
                                     showDialog.value = false
                                 } else {
                                     showDialog.value = false
-                                    todos.add(ToDo(titleText, descriptionText))
+                                    mTodoViewModel.addTodo(Todo(titleText, descriptionText))
                                     titleText = ""
                                     descriptionText = ""
                                 }
