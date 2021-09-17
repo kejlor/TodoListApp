@@ -1,22 +1,20 @@
 package com.example.todolistapp.composables
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme.typography
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.toMutableStateList
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.todolistapp.data.DataProvider
 import com.example.todolistapp.models.ToDo
-import androidx.compose.runtime.*
-import androidx.compose.ui.text.style.TextOverflow
+import com.example.todolistapp.ui.theme.OwnPurple
 
 @ExperimentalMaterialApi
 @Composable
@@ -26,7 +24,7 @@ fun CreateToDoListItem(todo: ToDo) {
             .padding(horizontal = 30.dp, vertical = 0.dp)
             .fillMaxWidth(),
         elevation = 0.dp,
-        backgroundColor = Color(0xff694598),
+        backgroundColor = OwnPurple,
         shape = RoundedCornerShape(
             topStart = 30.dp,
             topEnd = 30.dp,
